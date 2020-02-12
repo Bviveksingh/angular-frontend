@@ -1,0 +1,34 @@
+.blog-details-container{
+    width:100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+}
+
+.blog-details-image{
+    widtH:100%;
+    height:100%;
+    max-height:400px;
+}
+
+.blog-details-image img{
+    width:100%;
+    height:100%;
+}
+
+.blog-details-title-date{
+    display: flex;
+    flex-direction: column;
+    
+}
+.blog-details-title-date #title{
+    font-size:2em;
+}
+.blog-details-title-date #date{
+    font-size:1.2em;
+    font-weight: lighter;
+}
+
+.blog-details-content p{
+    font-size:1.3em;
+}

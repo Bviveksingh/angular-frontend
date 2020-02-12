@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="nav-container">
+        <div class="nav-container-heading">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="nav-container-links">
+            <button mat-raised-button routerLink='/admin/add-blog'><mat-icon>add</mat-icon>Add Blog</button>
+            <button mat-raised-button routerLink='/admin/all-blogs'><mat-icon>archive</mat-icon>All Blogs</button>
+            <button mat-raised-button id="signout-button" (click)="open_dialog('Are you sure you want to sign out?')">Sign Out</button>
+        </div>
+    </div>
+    <div class="main-container"> 
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+

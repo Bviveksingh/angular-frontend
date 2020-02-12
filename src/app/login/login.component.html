@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="login-container">
+        <div class="login-form-container">
+            <h3>Admin Login</h3>
+            <mat-form-field>
+                <input matInput [(ngModel)]="email" placeholder="Email Address">
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="password" matInput placeholder="Password" [type]="hide? 'password' : 'text'">
+                <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="submit_form()">Login</button>
+        </div>
+    </div>
+</div>

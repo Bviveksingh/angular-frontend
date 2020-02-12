@@ -1,0 +1,37 @@
+<div class="add-blog-container">
+    <div class="add-blog-main-form">
+        <div class="add-blog-input-title">
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="title" placeholder="Title of the blog">
+            </mat-form-field>
+        </div>
+        <div class="add-blog-input-content">
+            <ejs-richtexteditor [(value)]="content" height="auto" placeholder="Add Paragraph..."></ejs-richtexteditor>
+        </div>
+    </div>
+    <div class="add-blog-additional-form">
+        <div class="add-blog-additional-feature-image">
+            <h3>Feature Image</h3>
+            <input #imageInputs
+                type="file"
+                accept="image/*"
+                hidden
+                (change)="processFile(imageInput)">
+            <img class="preview-image" [src]="preview_image" *ngIf="preview_image">
+            <button mat-raised-button color="primary" (click)="imageInput.click()" >
+                {{preview_image ? 'Change Image': 'Upload Image'}}
+            </button>
+        </div>
+        <div class="add-blog-additional-tags">
+            <h3>Tags</h3>
+            <tag-component></tag-component>
+        </div>
+        <div class="add-blog-additional-actions">
+            <button mat-raised-button id="create-action" (click)="open_dialog('Are you sure you want to create the blog?')">Create</button>
+        </div>
+    </div>
+</div>
+
+<mat-spinner *ngIf="show_spinner" class="progress-spinner" [diameter]="50" ></mat-spinner>
+
+

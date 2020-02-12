@@ -1,0 +1,40 @@
+
+<div class="update-blog-container">
+    <div class="update-blog-main-form">
+        <div class="update-blog-input-title">
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="blog_props.title" placeholder="Title of the blog">
+            </mat-form-field>
+        </div>
+        <div class="update-blog-input-content">
+            <ejs-richtexteditor [(value)]="blog_props.content" height="auto"></ejs-richtexteditor>
+
+        </div>
+    </div>
+    <div class="update-blog-additional-form">
+        <div class="update-blog-additional-feature-image">
+            <h3>Feature Image</h3>
+            <input #imageInput
+                type="file"
+                accept="image/*"
+                hidden
+                (change)="processFile(imageInput)">
+            <img class="feature-image" [src]="blog_props.feature_image">
+            <button mat-raised-button color="primary" (click)="imageInput.click()" >
+                Change Image
+            </button>
+        </div>
+        <div class="update-blog-additional-tags">
+            <h3>Tags</h3>
+            <mat-chip-list class="chip-list">
+                <mat-chip *ngFor="let tag of blog_props.tags">{{tag.name}}</mat-chip>
+            </mat-chip-list>
+        </div>
+        <div class="update-blog-additional-actions">
+            <button mat-raised-button id="update-action" (click)="open_dialog('Are you sure you want to update the blog?')">Update</button>
+        </div>
+    </div>
+</div>
+
+<mat-spinner *ngIf="show_spinner" class="progress-spinner" [diameter]="50"></mat-spinner>
+

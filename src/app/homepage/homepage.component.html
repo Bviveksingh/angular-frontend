@@ -1,0 +1,53 @@
+<!-- <div class="homepage-wrapper">
+    <div class="homepage-container">
+        <div class="homepage-blog-container" *ngFor="let blog of all_blogs">
+            <div [routerLink]="['/blog',blog.id]" class="homepage-blog-image">
+                <img [src]="blog.feature_image">
+            </div>
+           <div class="homepage-blog-details">
+            <div [routerLink]="['/blog',blog.id]" class="homepage-blog-title">
+                <h3>{{blog.title}}</h3>
+            </div>
+            <div class="homepage-blog-date">
+                <h4>{{blog.created_at|date}}</h4>
+            </div>
+            <div class="homepage-blog-date">
+                <h4 [innerHTML]="blog.content|slice:0:50"></h4>
+            </div>
+           </div>
+        </div>
+    </div>
+</div> -->
+<div class="homepage-wrapper">
+    <!-- <div class="homepage-container">
+        <div class="homepage-blog-container" *ngFor="let blog of all_blogs">
+            <div [routerLink]="['/blog',blog.id]" class="homepage-blog-image">
+                <img [src]="blog.feature_image">
+            </div>
+           <div class="homepage-blog-details">
+            <div [routerLink]="['/blog',blog.id]" class="homepage-blog-title">
+                <h3>{{blog.title}}</h3>
+            </div>
+            <div class="homepage-blog-date">
+                <h4>{{blog.created_at|date}}</h4>
+            </div>
+            <div class="homepage-blog-date">
+                <h4 [innerHTML]="blog.content|slice:0:50"></h4>
+            </div>
+           </div>
+        </div>
+    </div> -->
+    <div class="homepage-container">
+        <mat-card class="blog-card" *ngFor="let blog of all_blogs">
+            <mat-card-header>
+                <mat-card-title [routerLink]="['/blog',blog.id]">{{blog.title}}</mat-card-title>
+                <mat-card-subtitle>{{blog.created_at|date}}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image [routerLink]="['/blog',blog.id]" [src]="blog.feature_image" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p [innerHTML]="blog.content|slice:0:300"></p>
+              </mat-card-content>
+        </mat-card>
+    </div>
+    
+</div>

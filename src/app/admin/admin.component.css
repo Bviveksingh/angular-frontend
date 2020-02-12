@@ -1,0 +1,52 @@
+.wrapper{
+    width:100%;
+    height:100%;
+    display: grid;
+    grid-template-areas:
+    "navigation main-content" 
+    ;
+    grid-template-columns: 0.25fr 1fr;
+}
+
+.nav-container{
+    grid-area:navigation;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #455a64;
+}
+.nav-container-heading h2{
+    font-size: 2.3em;
+    color: #f5f5f5;
+    font-weight: lighter;
+}
+
+.nav-container-links{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nav-container-links button{
+    margin-top:20px;
+    padding:6px 15px;
+    font-size:1.1em;
+    background-color: #4fc3f7;
+    color: #f5f5f5;
+    font-weight: lighter;
+}
+
+.nav-container-links button mat-icon{
+    margin-right:10px;
+}
+
+.main-container{
+    width:100%;
+    height:100%;
+    grid-area:main-content;
+}
+
+#signout-button{
+    background-color: tomato;
+    color: white;
+}
